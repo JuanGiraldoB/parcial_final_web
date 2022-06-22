@@ -22,6 +22,7 @@ fetch(url)
 .then(procesar => {
 
     procesar.forEach(pais => {
+        console.log(pais.nombre)
         paises_todos.push(pais)
         paises.push(pais['nombre'])
         poblacion.push(pais['poblacion'])
@@ -77,7 +78,7 @@ tabla.innerHTML = `
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td id="nombre_pais">dasda</td>
+                        <td id="nombre_pais"></td>
                         <td id="capital_pais"></td>
                         <td id="idioma_pais"></td>
                         <td id="poblacion_pais"></td>
