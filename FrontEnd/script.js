@@ -16,13 +16,21 @@ var url = "http://127.0.0.1:8000/api/paises"
 paises = []
 poblacion = []
 paises_todos = []
+p_nombre = []
+p_capital = []
+p_poblacion = []
+p_io = []
 
 fetch(url)
 .then(datos => datos.json())
 .then(procesar => {
 
     procesar.forEach(pais => {
-        console.log(pais.nombre)
+        p_nombre.push(pais['nombre'])
+        p_capital.push(pais['capital'])
+        p_poblacion.push(pais['poblacion'])
+        p_io.push(pais['idioma'])
+        
         paises_todos.push(pais)
         paises.push(pais['nombre'])
         poblacion.push(pais['poblacion'])
@@ -56,32 +64,32 @@ fetch(url)
 
 });
 
-console.log(paises_todos)
+console.log(p_nombre[0])
 
-// document.getElementById("nombre_pais").innerText = paises[0]
-// document.getElementById("capital_pais").innerText = ""
-// document.getElementById("idioma_pais").innerText = ""
-// document.getElementById("poblacion_pais").innerText = ""
+document.getElementById("nombre_pais").innerText = p_nombre[0]
+document.getElementById("capital_pais").innerText = ""
+document.getElementById("idioma_pais").innerText = ""
+document.getElementById("poblacion_pais").innerText = ""
 
-tabla = document.getElementById("tabla")
-tabla.innerHTML = `
-    <table class="table table-striped table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Capital</th>
-                        <th scope="col">Idioma Oficial</th>
-                        <th scope="col">Población</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td id="nombre_pais"></td>
-                        <td id="capital_pais"></td>
-                        <td id="idioma_pais"></td>
-                        <td id="poblacion_pais"></td>
-                    </tr>
-                </tbody>
-            </table>`
+// tabla = document.getElementById("tabla")
+// tabla.innerHTML = `
+//     <table class="table table-striped table-dark">
+//                 <thead>
+//                     <tr>
+//                         <th scope="col">#</th>
+//                         <th scope="col">Nombre</th>
+//                         <th scope="col">Capital</th>
+//                         <th scope="col">Idioma Oficial</th>
+//                         <th scope="col">Población</th>
+//                     </tr>
+//                 </thead>
+//                 <tbody>
+//                     <tr>
+//                         <th scope="row">1</th>
+//                         <td id="nombre_pais"></td>
+//                         <td id="capital_pais"></td>
+//                         <td id="idioma_pais"></td>
+//                         <td id="poblacion_pais"></td>
+//                     </tr>
+//                 </tbody>
+//             </table>`
