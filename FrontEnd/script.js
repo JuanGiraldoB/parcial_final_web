@@ -57,10 +57,10 @@ fetch(url)
 
 console.log(paises_todos)
 
-document.getElementById("nombre_pais").innerText = paises[0]
-document.getElementById("capital_pais").innerText = ""
-document.getElementById("idioma_pais").innerText = ""
-document.getElementById("poblacion_pais").innerText = ""
+// document.getElementById("nombre_pais").innerText = paises[0]
+// document.getElementById("capital_pais").innerText = ""
+// document.getElementById("idioma_pais").innerText = ""
+// document.getElementById("poblacion_pais").innerText = ""
 
 tabla = document.getElementById("tabla")
 tabla.innerHTML = `
